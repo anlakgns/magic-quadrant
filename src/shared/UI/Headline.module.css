@@ -1,0 +1,9 @@
+.main {
+  background-color: var(--light-blue);
+  color: var(--white);
+  font-family: Sans-Serif;
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 3px;
+  text-align: center;
+}
