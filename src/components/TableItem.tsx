@@ -11,7 +11,7 @@ interface TableItemProps {
 
 const TableItem: React.FC<TableItemProps> = ({ itemData, id }) => {
   const { updateItem, itemList, deleteItem } = useContext(AppContext);
-  
+
   const labelHandler = (e: React.ChangeEvent<HTMLInputElement>): void => {
     updateItem(id, {
       ...itemData,
@@ -40,11 +40,12 @@ const TableItem: React.FC<TableItemProps> = ({ itemData, id }) => {
       <input
         type="text"
         name="label"
-        onChange={(labelHandler)}
+        onChange={labelHandler}
         value={itemList[id].label}
         className={classes.inputLabel}
       />
       <input
+        type="number"
         name="vision"
         onChange={visionHandler}
         value={itemList[id].x}
