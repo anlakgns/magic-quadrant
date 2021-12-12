@@ -10,7 +10,7 @@ const Table: React.FC = () => {
   const itemListArr = Object.values(itemList);
   const itemListKeys = Object.keys(itemList);
 
-  const addItemHandler = () => {
+  const addItemHandler = (): void => {
     addItem();
   };
 

@@ -43,7 +43,7 @@ const StateProvider: React.FC = ({ children }) => {
     localStorage.setItem('items', JSON.stringify(itemList));
   }, [itemList]);
 
-  const updateItem = useCallback((id: string, itemData: Item) => {
+  const updateItem = useCallback((id: string, itemData: Item): void => {
     setItemList((prevState) => {
       return {
         ...prevState,
@@ -52,13 +52,13 @@ const StateProvider: React.FC = ({ children }) => {
     });
   }, []);
 
-  const deleteItem = (id: string) => {
+  const deleteItem = (id: string): void => {
     const newState = { ...itemList };
     delete newState[id];
     setItemList(newState);
   };
 
-  const addItem = () => {
+  const addItem = (): void => {
     const id = randomId();
     const newState = {
       ...itemList,

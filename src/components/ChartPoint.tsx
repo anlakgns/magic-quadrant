@@ -29,13 +29,13 @@ const ChartPoint: React.FC<ChartPointProps> = ({ itemData, id }) => {
   }, [itemList, itemData.x, itemData.y]);
 
   // to keep the point inside chart
-  const squareConstraints = (data: number) => {
+  const squareConstraints = (data: number) : number => {
     if (data > 385) return 385;
     if (data < 0) return 0;
     return data;
   };
 
-  const mouseMoveHandler = (event: React.MouseEvent) => {
+  const mouseMoveHandler = (event: React.MouseEvent): void => {
     if (isDragging) {
       event.preventDefault();
       updateItem(id, {
@@ -50,13 +50,13 @@ const ChartPoint: React.FC<ChartPointProps> = ({ itemData, id }) => {
     }
   };
 
-  const mouseDownHandler = (event: React.MouseEvent) => {
+  const mouseDownHandler = (event: React.MouseEvent): void => {
     event.preventDefault();
     setIsDragging(true);
     setIsPointOutlined(true);
   };
 
-  const mouseUpHandler = (event: React.MouseEvent) => {
+  const mouseUpHandler = (event: React.MouseEvent): void => {
     event.preventDefault();
     setIsDragging(false);
     setIsPointOutlined(false);
